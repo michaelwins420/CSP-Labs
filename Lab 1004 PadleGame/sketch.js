@@ -19,10 +19,10 @@ loadBalls(numBalls); //Loads 200 balls
 //  The draw function is called @ 30 fps
 function draw(){ //draw function
   background(20, 20, 20);
-  textSize(14);
-  text('Score', 50, 10);
-  
   paddle.run(); //calls  function
+  textSize(14);
+  fill(255, 255, 255);
+  text(score, 50, 50);
   // for each ball call  run
   for(var i = 0; i < balls.length; i++){//for loop of balls
     balls[i].run(); //array of balls
@@ -30,20 +30,29 @@ function draw(){ //draw function
 
   for(var i = balls.length-1; i >= 0; i--){//for loop of splicing balls
     if(balls[i].isColliding()){//Calls Collision
-      if(balls[i].vel.y < 0){
-        numBalls+=3;
+      if(  balls[i].vel.y < 0){
+        numBalls+=3;//Adds 3 balls when ball hits punder the paddle
         loadBalls(numBalls);
 
-      }
-      score++;
-      balls.splice(i, 1);//splices i amount of balls
-      if(balls.length == 0 ){
-        numBalls+=3;
-        loadBalls(numBalls);
-      }
 
+      }else{
+        balls.splice(i , 1);
+        score = score + 1; //score increases by 1 evertime ball is spliced
+        //w = w + 5;
+        if(balls.length === 0){
+          numBalls+=3; //adds 3 balls when number of balls is 0
+          loadBalls(numBalls);
+
+          if(score > 15){
+            textSize(14);
+            fill(255, 255, 255);
+            text('You Win!' , 50, 50);
+            noLoop();
+          }
+          //noLoop();
+        }
     }
-
+  }
   }
 }
 
