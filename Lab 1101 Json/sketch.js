@@ -1,7 +1,6 @@
 //Michael Costantini
 
 var data;
-var barHeight
 
 function preload(){
   data = loadJSON("teams.json");
