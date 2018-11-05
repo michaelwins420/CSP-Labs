@@ -4,7 +4,7 @@ var data;
 var barHeight
 
 function preload(){
-  data = loadJSON("Teams.json");
+  data = loadJSON("teams.json");
   console.log(data);
 
 }
