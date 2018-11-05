@@ -3,12 +3,12 @@
 var data;
 
 function preload(){
-  data = loadJSON("teams.json");
+  data = loadJSON("population.json");
   console.log(data);
 
 }
 
 
 function setup(){
-  data.unitedstates[4].teams
+    data.countrydata[3].males
 }
