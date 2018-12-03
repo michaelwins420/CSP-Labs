@@ -12,7 +12,7 @@ function setup(){
   cols = width/w;
   rows = height/w;
   cnv.position((windowWidth-width)/2, 30);
-  frameRate(30);
+  frameRate(10);
   background(5, 5, 5);
   food = new Food(createVector(round(random(40))*w, round(random(40))*w), createVector(0,0)); //creates Food
   snake = new Snake(createVector(width/2, height/2), createVector(1, 0)); //creates Snake

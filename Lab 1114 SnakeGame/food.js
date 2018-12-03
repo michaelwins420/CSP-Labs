@@ -26,5 +26,9 @@ function Food(loc, vel){ //Food constructor function
       fill(250, 0,0); //food is red
       rect(this.loc.x, this.loc.y, w, w)//shape of food
     }
+    this.randomize = function() {
+    this.loc = createVector(width/2-Math.floor(Math.random()*16-8)*w,
+                            height/2+Math.floor(Math.random()*12-6)*w)
+    }
 
 }
